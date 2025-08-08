@@ -1,5 +1,10 @@
 # Hugo configuration file
-title: My Site
+title: ক্ষিপ্র কিবোর্ড ডকুমেন্টেশন
+
+# Language and internationalization
+languageCode: 'bn'
+defaultContentLanguage: 'bn'
+hasCJKLanguage: true
 
 # import hextra as module
 module:
@@ -15,17 +20,19 @@ markup:
   # enable hextra syntax highlight
   highlight:
     noClasses: false
+    lineNos: true
+    lineNumbersInTable: false
 
 menu:
   main:
-    - name: Docs
-      pageRef: /docs
+    - name: মূল সাইট ↗
+      url: "https://KhiproKeyboard.github.io"
       weight: 1
-    - name: About
-      pageRef: /about
+    - name: ইনস্টলেশন
+      url: "/docs/installation/"
       weight: 2
-    - name: Contact ↗
-      url: "https://github.com/imfing"
+    - name: ম্যাপিং গাইড
+      url: "/docs/mapping-syntax/"
       weight: 3
     - name: Search
       weight: 4
@@ -33,24 +40,45 @@ menu:
         type: search
     - name: GitHub
       weight: 5
-      url: "https://github.com/imfing/hextra-starter-template"
+      url: "https://github.com/KhiproKeyboard"
       params:
         icon: github
-    - name: Twitter
+    - name: Telegram
       weight: 6
-      url: "https://twitter.com/"
+      url: "https://t.me/+oXLVpYDtyDNmYzll"
       params:
-        icon: x-twitter
+        icon: telegram
 
 params:
   navbar:
     displayTitle: true
     displayLogo: false
+    width: wide
+
+  page:
+    # full (100%), wide (90rem), normal (1280px)
+    width: wide
+
+  theme:
+    # light | dark | system
+    default: system
+    displayToggle: true
 
   footer:
-    displayCopyright: false
-    displayPoweredBy: true
+    displayCopyright: true
+    displayPoweredBy: false
 
   editURL:
+    enable: false
+    base: "https://github.com/KhiproKeyboard/docs/edit/main/content"
+
+  search:
     enable: true
-    base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
+    type: flexsearch
+
+  # Table of contents
+  toc:
+    enable: true
+    keepStatic: false
+    startLevel: 2
+    endLevel: 4

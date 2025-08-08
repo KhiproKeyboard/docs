@@ -1,83 +1,94 @@
-# Hextra Starter Template
+# Khipro Keyboard Documentation
 
-[![Deploy Hugo site to Pages](https://github.com/imfing/hextra-starter-template/actions/workflows/pages.yaml/badge.svg)](https://github.com/imfing/hextra-starter-template/actions/workflows/pages.yaml)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6e83fd88-5ffe-4808-9689-c0f3b100bfe3/deploy-status)](https://app.netlify.com/sites/hextra-starter-template/deploys)
-![Vercel Deployment Status](https://img.shields.io/github/deployments/imfing/hextra-starter-template/production?logo=vercel&logoColor=white&label=vercel&labelColor=black&link=https%3A%2F%2Fhextra-starter-template.vercel.app%2F)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+Khipro is an innovative Bengali typing system designed for a fast, efficient, and intelligent typing experience. It eliminates the need for frequent use of the Shift key, offering a more streamlined and comfortable typing experience.
+
+## Features
+
+-   **Shift-Free Typing:** No need to use the Shift key for most characters.
+-   **Intelligent Suggestions:** Smart auto-completion with typing booster.
+-   **Cross-Platform:** Supports Linux, Windows, and Android (coming soon).
+-   **Case-Insensitive:** Inspired by the Chinese Pinyin method.
+
+## Installation
+
+### Linux
+
+1.  **Install Prerequisites:**
+    *   Install `m17n` and either `Fcitx-m17n` or `ibus-m17n` depending on your input method.
+    *   For intelligent suggestions, install `ibus-typing-booster` (recommended with `ibus-m17n`).
+
+    ```bash
+    # Debian/Ubuntu
+    sudo apt install ibus-m17n ibus-typing-booster
+
+    # Fedora
+    sudo dnf install ibus-m17n ibus-typing-booster
+    ```
+
+2.  **Install Khipro:**
+
+    ```bash
+    # IBus users
+    sudo rm /usr/share/m17n/bn-khipro*.mim; cd ~/; rm -rf khipro-m17n; git clone https://github.com/rank-coder/khipro-m17n.git; cd ~/khipro-m17n; sudo cp bn-khipro*.mim /usr/share/m17n/
+
+    # Fcitx5 users
+    sudo rm /usr/share/m17n/bn-khipro*.mim && cd ~/ && sudo rm -rf ~/khipro-m17n && git clone https://github.com/rank-coder/khipro-m17n.git && cd ~/khipro-m17n && sudo cp bn-khipro*.mim /usr/share/m17n/ && fcitx5 restart
+    ```
+
+3.  **Configure:**
+    *   Restart your computer or log out and log back in.
+    *   Add "Bengali (khipro-m17n)" in your system's input method settings.
+    *   Configure `ibus-typing-booster` for the best experience.
+
+### Windows
+
+-   **Borno Keyboard:** Khipro layout is built-in in the latest version of Borno Native.
+    1.  Download the latest version from [Codepotro's Telegram Support Group](https://t.me/codepotro).
+    2.  Install the application.
+    3.  Select the Khipro layout from keyboard settings.
+-   **Nms Kontho:** Use the custom layout for Nms Kontho application.
+    1.  Install [NMS Kontho](https://nabil-bot.github.io/Kontho/).
+    2.  Download [Khipro NMS Layout](https://github.com/NabilSnigdho/khipro-nms/raw/refs/heads/main/Khipro.nmsLayout).
+    3.  Import the downloaded layout.
+    4.  Restart NMS Kontho.
+    5.  Select the Khipro layout.
+
+### Android
+
+-   Coming soon in [Borno Android Keyboard](https://play.google.com/store/apps/details?id=com.codepotro.borno.keyboard).
+
+## Usage
+
+Khipro offers a unique typing experience by mapping Bengali characters to the English keyboard in a case-insensitive manner. This eliminates the need for the Shift key, resulting in faster and more comfortable typing.
 
 
-🐣 Minimal template for getting started with [Hextra](https://github.com/imfing/hextra)
+### Mapping and Syntax
 
-![hextra-template](https://github.com/imfing/hextra-starter-template/assets/5097752/c403b9a9-a76c-47a6-8466-513d772ef0b7)
+Refer to the [Mapping and Syntax Guide](docs/mapping-syntax) for a complete mapping table and usage instructions.
 
-[🌐 Demo ↗](https://imfing.github.io/hextra-starter-template/)
+## Configuration
 
-## Quick Start
+For the best experience, configure `ibus-typing-booster` with Khipro. See the [Configuration Guide](docs/configuration) for detailed instructions.
 
-Use this template to create your own repository:
+## Updating and Uninstalling
 
-<img src="https://docs.github.com/assets/cb-77734/mw-1440/images/help/repository/use-this-template-button.webp" width=400 />
+Refer to the [Update and Uninstall Guide](docs/update-uninstall) for instructions on how to update or uninstall Khipro.
 
-You can also quickly start developing using the following online development environment:
+## Using Without Typing Booster
 
-- [GitHub Codespaces](https://github.com/codespaces) 
-    
-    [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/imfing/hextra-starter-template)
+Khipro can also be used without typing booster. See the [Using Without Typing Booster Guide](docs/without-typing-booster) for more information.
 
-    Create a new codespace and follow the [Local Development](#local-development) to launch the preview
+## Contributing
 
-- [Gitpod](https://gitpod.io)
+Khipro is a community project. You are welcome to contribute!
 
-    [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/imfing/hextra-starter-template)
+-   [Telegram Group](https://t.me/+oXLVpYDtyDNmYzll): For direct support and discussions.
+-   [GitHub Organization](https://github.com/KhiproKeyboard): View code and contribute.
 
+## License
 
-## Deployment
+Khipro is a free software project. All code is open source and community-driven.
 
-### GitHub Pages
-
-A GitHub Actions workflow is provided in [`.github/workflows/pages.yaml`](./.github/workflows/pages.yaml) to [publish to GitHub Pages](https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/) for free. 
-
-For details, see [Publishing with a custom GitHub Actions workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow).
-
-Note: in the settings, make sure to set the Pages deployment source to **GitHub Actions**:
-
-<img src="https://github.com/imfing/hextra-starter-template/assets/5097752/99676430-884e-42ab-b901-f6534a0d6eee" width=600 />
-
-[Run the workflow manually](https://docs.github.com/en/actions/using-workflows/manually-running-a-workflow) if it's not triggered automatically.
-
-### Netlify
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/imfing/hextra-starter-template)
-
-### Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fimfing%2Fhextra-starter-template&env=HUGO_VERSION)
-
-Override the configuration:
-
-<img src="https://github.com/imfing/hextra-starter-template/assets/5097752/e2e3cecd-c884-47ec-b064-14f896fee08d" width=600 />
-
-## Local Development
-
-Pre-requisites: [Hugo](https://gohugo.io/getting-started/installing/), [Go](https://golang.org/doc/install) and [Git](https://git-scm.com)
-
-```shell
-# Clone the repo
-git clone https://github.com/imfing/hextra-starter-template.git
-
-# Change directory
-cd hextra-starter-template
-
-# Start the server
-hugo mod tidy
-hugo server --logLevel debug --disableFastRender -p 1313
-```
-
-### Update theme
-
-```shell
-hugo mod get -u
-hugo mod tidy
-```
-
-See [Update modules](https://gohugo.io/hugo-modules/use-modules/#update-modules) for more details.
-
+[MIT](LICENSE)
